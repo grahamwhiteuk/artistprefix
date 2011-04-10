@@ -1,0 +1,9 @@
+[RB Plugin]
+Loader=python
+Module=artistprefix
+IAge=1
+Name=Artist Prefix
+Description=Sort by Artist Ignoring Prefixes
+Authors=Graham White <graham_alton@hotmail.com>
+Copyright=Copyright © 2011 Graham White
+Website=http://code.google.com/p/artistprefix/
