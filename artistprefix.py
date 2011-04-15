@@ -35,10 +35,10 @@ class ArtistPrefix(rb.Plugin):
 	def on_artist_prefix_query(self, model, path, iter):
 		# note: path and iter are effectively useless as a gtkTree doesn't populate the row on row-insert
 		# see GTK documentation for row-inserted signal for more info
-		# so we simple iterate over the model instead
+		# so we simply iterate over the model instead
 		for row in model:
 			entry = row[0]
-			artist_sort = re.sub('^.+\s','',self.db.entry_get(entry, rhythmdb.PROP_ARTIST),1,re.I)
+			artist_sort = re.sub('^.+?\s','',self.db.entry_get(entry, rhythmdb.PROP_ARTIST),1,re.I)
 			self.db.set(entry,rhythmdb.PROP_ARTIST_SORTNAME,artist_sort)
 			self.db.commit()
 			model.remove_entry(entry)
