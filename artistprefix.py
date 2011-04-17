@@ -158,5 +158,5 @@ class ArtistPrefix(rb.Plugin):
 		if response is not 3:
 			dialog.hide()
 		else:
-			webbrowser.open_new('http://code.google.com/p/artistprefix/')
+			webbrowser.open_new('http://code.google.com/p/artistprefix/wiki/Configure')
 
