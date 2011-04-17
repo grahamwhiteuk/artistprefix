@@ -1,0 +1,21 @@
+Rhythmbox Artist Prefix Plugin
+
+A plugin for the Rhythmbox music player that allows your music library to be
+sorted by artist name ignoring certain prefixes in artist names. For example,
+you can ignore "The" in "The Beatles" to sort their music under 'B' instead of
+'T'.
+
+The plugin works by querying the Rhythmbox database for artists with the given
+prefixes and that don't currently have a sort order defined (which allows the
+user to manually override the sort order derived by the plugin). So long as the
+plugin is active it will watch the database for changes too. The first time you
+run the plugin it will automatically add an entry to the sort order of all
+tracks returned by the query and if you leave it running then any time Rhythmbox
+finds new tracks matching the query their sort order will be updated as well.
+Whenever the plugin is notified of a track by an artist such as "The Beatles"
+and that track doesn't already have a sort order, it will chop off "The" from
+the artist name and add the remainder (in this case "Beatles") to the artist
+sort order property for that track.
+
+For more information, including installation and configuration instructions
+please refer to the web site at http://code.google.com/p/artistprefix/
