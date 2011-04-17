@@ -52,9 +52,7 @@ class ArtistPrefix(rb.Plugin):
 	# Parameters:
 	#   shell - a reference to the RB shell object
 	def deactivate(self, shell):
-		del self.artist_prefix_query
-		del self.db
-		del self.gconf
+		del self
 
 	# build_query(ignore_list)
 	# Builds and runs a query against the RB database returning entries as specified in the user configuration
@@ -63,7 +61,7 @@ class ArtistPrefix(rb.Plugin):
 	def build_query(self, ignore_list):
 		# if no ignore list is set in gconf then don't run the query
 		# ensures user selects the prefixes they wish to ignore before running the plugin
-		if ignore_list is None:
+		if not ignore_list:
 			return
 
 		query = self.db.query_new()
